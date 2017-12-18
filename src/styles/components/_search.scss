@@ -1,0 +1,25 @@
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+
+  form input {
+    min-width: 300px;
+    color: #fff;
+    font-size: 1.2em;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    font-family: 'Lato', sans-serif;
+    margin: 0 30px;
+    &:focus{
+      outline: none;
+    }
+    &::placeholder {
+      color: #fff;
+    }
+  }
+
+}

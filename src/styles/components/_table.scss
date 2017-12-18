@@ -1,0 +1,11 @@
+.table {
+  background-color: transparent;
+  margin: 0 auto;
+  th.summary, td.summary {
+    text-align: center;
+  }
+}
+.table td, .table th {
+  border: none;
+  color: #fff !important;
+}
