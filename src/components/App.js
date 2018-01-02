@@ -8,7 +8,7 @@ import Weekly from './Weekly';
 import Daily from './Daily';
 import Map from './Map';
 
-const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const BASE_URL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8000';
 
 export default class App extends Component {
   state = {
@@ -31,26 +31,28 @@ export default class App extends Component {
     this.getCoordinates(`${latitude},${longitude}`);
   }
   getCoordinates = (location) => {
-    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?key=${GOOGLE_API_KEY}&address=${location}`)
-      .then(resp => {
+    axios.post(`${BASE_URL}/api/location/`, {
+      location
+    })
+      .then((resp) => {
         /* 
-          This destructures formatted address off resp.data.results[0]
-          and lat, lng off resp.data.results[0].geometry.location
+          This destructures formatted address off resp.data
+          and lat, lng off resp.data.geometry.location
         */
         const { 
           formatted_address,
           address_components,
           geometry: { location: { lat, lng } }
-        } = resp.data.results[0];
+        } = resp.data;
         this.getWeather(lat, lng);
         this.setState(() => ({
           formatted_address,
-          short_name: resp.data.results[0].address_components[0].short_name
+          short_name: resp.data.address_components[0].short_name
         }));
       });
   }
   getWeather = (lat, lng) => {
-    axios.get(`/api/weather/${lat},${lng}`)
+    axios.get(`${BASE_URL}/api/weather/${lat},${lng}`)
     .then((resp) => {
       this.setState(() => ({
         weather: resp.data,
@@ -63,7 +65,7 @@ export default class App extends Component {
     if (!user) {
       return (
         <div id="loader">
-          <ReactLoading className="loader-svg" type="bubbles" color="#fff" height="300" width="300" />
+          <ReactLoading className="loader-svg" type="bubbles" color="#fff" />
         </div>
       )
     } else {
