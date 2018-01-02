@@ -3,12 +3,9 @@ const express = require('express');
 const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
-const xmlhttprequest = require('xmlhttprequest');
 const PORT = process.env.PORT || '8000';
 const app = express();
 const axios = require('axios');
-
-require('dotenv').config()
 
 const GOOGLE_API_KEY = 'AIzaSyC9NoROpZXAgKMhlhIfTspvyZrjuuNS9Bg';
 const DARKSKY_API_KEY = 'b85a054525a7d6b3665d54f019939acb';
