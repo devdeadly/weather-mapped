@@ -12,7 +12,7 @@ require('dotenv').config()
 
 const GOOGLE_API_KEY = 'AIzaSyC9NoROpZXAgKMhlhIfTspvyZrjuuNS9Bg';
 const DARKSKY_API_KEY = 'b85a054525a7d6b3665d54f019939acb';
-const DARK_SKY_BASE_URL = 'https://api.darksky.net/forecast';
+const DARK_SKY_URL = 'https://api.darksky.net/forecast';
 
 // Parsers for POST data
 app.use(bodyParser.json());
@@ -37,7 +37,7 @@ app.use(express.static(path.resolve(__dirname, 'public')));
 
 app.get('/api/weather/:LAT,:LNG', (req, res) => {
   const { LAT, LNG } = req.params;
-  axios.get(`${DARK_SKY_BASE_URL}/${DARKSKY_API_KEY}/${LAT},${LNG}`)
+  axios.get(`${DARK_SKY_URL}/${DARKSKY_API_KEY}/${LAT},${LNG}`)
     .then((resp) => {
       res.json(resp.data);
     });
