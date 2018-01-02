@@ -5,9 +5,9 @@
   "author": "Colby Thomas",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
-    "serve": "webpack-dev-server",
-    "server": "node server.js"
+    "build": "webpack -p",
+    "start": "webpack-dev-server",
+    "heroku:postbuild": "yarn run build"
   },
   "dependencies": {
     "axios": "^0.17.1",
