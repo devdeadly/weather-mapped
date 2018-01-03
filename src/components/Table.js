@@ -41,7 +41,7 @@ export default (props) => {
                       </td>
                       <td>{Math.round(day.temperatureLow)}</td>
                       <td>{Math.round(day.temperatureHigh)}</td>
-                      <td className="summary">{day.summary}</td>
+                      <td className="summary">{day.summary.slice(0, -1)}</td>
                     </tr>
                   )
                 })

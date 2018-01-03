@@ -81,10 +81,10 @@ export default class App extends Component {
                   <Summary {...this.state} />
                 </div>
                 <div className="columns">
-                  <div className="column is-one-third">
+                  <div className="column is-half">
                     <Daily {...this.state}/>
                   </div>
-                  <div className="column is-two-third">
+                  <div className="column is-half">
                     <Weekly {...weather} />
                   </div>          
                 </div>

@@ -1,5 +1,5 @@
 {
-  "name": "weather-v2",
+  "name": "weather-2",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Colby Thomas",
@@ -33,7 +33,6 @@
     "react-dom": "15.6.1",
     "react-google-maps": "^9.4.3",
     "react-loading": "^1.0.3",
-    "react-skycons": "^0.7.0",
     "sass-loader": "6.0.6",
     "style-loader": "0.18.2",
     "webpack": "3.1.0",

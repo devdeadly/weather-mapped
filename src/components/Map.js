@@ -1,6 +1,7 @@
 import React from 'react';
 import { compose, withProps } from "recompose"
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import mapStyles from '../../mapStyles.json';
 
 const GOOGLE_API_KEY = 'AIzaSyC9NoROpZXAgKMhlhIfTspvyZrjuuNS9Bg';
 
@@ -22,6 +23,15 @@ const Map = compose(
             defaultZoom={8}
             defaultCenter={{ lat: props.user.lat, lng: props.user.lng }}
             center={{ lat: props.weather.latitude, lng: props.weather.longitude }}
+            defaultOptions={{ 
+              styles: mapStyles,
+              zoomControl: false,
+              mapTypeControl: false,
+              scaleControl: false,
+              streetViewControl: false,
+              rotateControl: false,
+              fullscreenControl: false
+            }}
           >
             {props.isMarkerShown && <Marker position={{ lat: props.weather.latitude, lng: props.weather.longitude }} />}
           </GoogleMap>
@@ -31,6 +41,15 @@ const Map = compose(
           <GoogleMap
             defaultZoom={8}
             center={{ lat: props.user.lat, lng: props.user.lng }}
+            defaultOptions={{ 
+              styles: mapStyles,
+              zoomControl: false,
+              mapTypeControl: false,
+              scaleControl: false,
+              streetViewControl: false,
+              rotateControl: false,
+              fullscreenControl: false
+            }}
           >
             {props.isMarkerShown && <Marker position={{ lat: props.user.lat, lng: props.user.lng }} />}
           </GoogleMap>

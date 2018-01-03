@@ -7,32 +7,25 @@ const getIcon = (str) => str.replace(/-/g, "_").toUpperCase();
 
 export default (props) => {
   return (
-    <div>
-      <div className="flex-container">
-        <ReactAnimatedWeather
-          icon={getIcon(props.weather.daily.icon)}
-          color={'#ddd'}
-          size={200}
-          animate={true}
-        />
+    <div className="has-text-centered">
+      <ReactAnimatedWeather
+        icon={getIcon(props.weather.daily.icon)}
+        color={'#ddd'}
+        size={200}
+        animate={true}
+      />
+      <div id="daily-summary">
+        <em>{props.weather.daily.summary.slice(0, -1)}</em>
       </div>
-      <div className="flex-container jc-sa">
-        <h3 className="is-size-3">
-          {Math.round(props.weather.currently.temperature)}°F
-        </h3>
-        <h3 className="is-size-3">
-          {moment
-            .unix(props.weather.currently.time)
-            .tz(props.weather.timezone)
-            .format('h:mm a')}
-        </h3>
-      </div>
-      <div className="flex-container">
-        <h5 className="is-size-5">
-            {props.weather.daily.summary}
-        </h5>
-      </div>
+      <h3 className="is-size-3" style={{ textTransform: 'none' }}>
+        {Math.round(props.weather.currently.temperature)}°F
+      </h3>
+      <h3 className="is-size-3">
+        {moment
+          .unix(props.weather.currently.time)
+          .tz(props.weather.timezone)
+          .format('h:mm a')}
+      </h3>
     </div>
   );
 }
-// <button className="button is-link" onClick={() => console.log(props)}>Daily Props</button>
