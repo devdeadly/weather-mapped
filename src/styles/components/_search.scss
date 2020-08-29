@@ -12,14 +12,13 @@
     background: transparent;
     border: none;
     border-bottom: 1px solid #fff;
-    font-family: 'Lato', sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0 30px;
-    &:focus{
+    &:focus {
       outline: none;
     }
     &::placeholder {
       color: #fff;
     }
   }
-
 }
