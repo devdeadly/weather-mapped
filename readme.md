@@ -4,7 +4,7 @@
 
 ## Demo
 
-https://cc-weather2.herokuapp.com
+https://mysterious-lowlands-58940.herokuapp.com/
 
 ## Installation
 
