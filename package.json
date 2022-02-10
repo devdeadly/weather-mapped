@@ -27,7 +27,7 @@
     "lodash": "^4.17.4",
     "moment": "^2.19.4",
     "moment-timezone": "^0.5.14",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "normalize.css": "7.0.0",
     "react": "15.6.1",
     "react-animated-weather": "^1.0.3",
